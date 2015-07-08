@@ -1,3 +1,14 @@
+header {
+
+  height:100vh;
+  width:100vw;
+}
+
+
+.info {
+  height:300px;
+  background:red;
+}
 
 /*video code begins*/
 
@@ -35,7 +46,7 @@
 
 @media (max-width: 767px) {
   .fullscreen-bg {
-    background: url('images/vidStill.jpg');
+    background: url('../media/mobilebg.png');
     background-attachment:fixed;
     background-repeat:no-repeat;
     background-position:center;
