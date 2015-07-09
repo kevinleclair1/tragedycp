@@ -6,8 +6,41 @@ header {
 
 
 .info {
-  height:300px;
-  background:red;
+  background: $mainBack;
+  padding: 40px 0;
+}
+
+.infoWrap {
+  display: flex;
+  .youWrap {
+    margin: auto;
+    display: flex;
+  }
+}
+
+.youWrap > * {
+  margin: auto;
+}
+
+.preOrder {
+  background: $mainBack;
+  padding: 40px 0;
+  font-size: 0;
+  h2 {
+    font-size: 30px;
+  }
+  li {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    img {
+      width: 80%; 
+    }
+  }
+}
+
+path {
+  fill: white;
 }
 
 /*video code begins*/
