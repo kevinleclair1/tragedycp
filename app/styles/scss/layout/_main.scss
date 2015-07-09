@@ -4,10 +4,15 @@ header {
   width:100vw;
 }
 
-
-.info {
+section {
   background: $mainBack;
   padding: 40px 0;
+  h2 {
+    font-size: 30px;
+    text-align: center;
+    color: $mainText;
+    margin-bottom: 20px;
+  }
 }
 
 .infoWrap {
@@ -23,12 +28,7 @@ header {
 }
 
 .preOrder {
-  background: $mainBack;
-  padding: 40px 0;
   font-size: 0;
-  h2 {
-    font-size: 30px;
-  }
   li {
     display: inline-block;
     width: 20%;
@@ -38,6 +38,23 @@ header {
     }
   }
 }
+
+.tourTop {
+  display: flex; 
+}
+
+.tourTop > * {
+  margin: auto;
+  color: $mainText
+}
+
+.rsvp a {
+  text-decoration: none;
+  padding: 5px;
+  background: $mainText;
+  color: white;
+}
+
 
 path {
   fill: white;
