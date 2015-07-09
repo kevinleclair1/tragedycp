@@ -39,13 +39,32 @@ section {
   }
 }
 
-.tourTop {
-  display: flex; 
+.dateWrap {
+  padding: 0 50px;
 }
 
 .tourTop > * {
-  margin: auto;
-  color: $mainText
+  color: $mainText;
+  text-align: left;
+  display: inline-block;
+}
+
+.tourTop {
+  width: 100%;
+}
+
+.date {
+  width: 20%;
+}
+.venue {
+  width: 30%;
+}
+.location {
+  width: 20%;
+}
+.rsvp{
+  width: 25%;
+  text-align: right;
 }
 
 .rsvp a {
