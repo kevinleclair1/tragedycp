@@ -53,7 +53,7 @@ gulp.task('scripts', function() {
                //catch errors
                .on('error', gutil.log)
                //compress :D
-               .pipe(uglify())
+               // .pipe(uglify())
                //where we will store our finalized, compressed script
                .pipe(gulp.dest('app/scripts'))
                //notify browserSync to refresh
