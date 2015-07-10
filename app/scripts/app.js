@@ -18,12 +18,11 @@ app.getData = function(){
 		method: 'GET',
 		dataType: 'jsonp',
 		success: function(data){
-			console.log('hey');
+			console.log(data);
 			for (var i = 0; i < 6; i++) {
 				app.displayTour(data[i]);	
 				console.log(data[i]);
-			};
-			console.log('sup');			
+			};	
 		}
 	})
 };
@@ -43,14 +42,33 @@ app.displayTour = function(info){
 
 	var venue = info.title.slice(titleFirstSpace, titleIn);
 
+
 	tempData.date = date;
 	tempData.location = info.formatted_location;
 	tempData.venue = venue;
 	tempData.link = info.facebook_rsvp_url;
+	tempData.support = info.artists;
 
-	var temp = _.template('<div class="tourTop"><span class="date"><%- date %></span><span class="venue"><%- venue %></span><span class="location"><%- location %></span><span class="rsvp"><a href="<%- link %>">RSVP</a></span></div>');
+	var temp = _.template('<div class="dateSingle"><div class="tourTop"><span class="date"><%- date %></span><span class="venue"><%- venue %></span><span class="location"><%- location %></span><span class="rsvp"><a href="<%- link %>">RSVP</a></span></div></div>');
+	var support = _.template('<div class="tourBottom"><div class="supportNames"><span>With: </span></div></div>')
+	var supportName = _.template('<a href="<%- facebook_page_url %>"class="supportName"><%- name %></a>')
+
 	var html = temp(tempData);
-	$('.dateWrap').append(html);
+		supportHtml = support();
+		$html = $(html);
+		$supportHtml = $(supportHtml);
+
+	if (tempData.support.length > 1){
+		_.each(tempData.support, function(val){
+			if (val.name !== "Counterparts"){
+				var supportNameHtml = supportName(val);
+				$supportHtml.find(".supportNames").append($(supportNameHtml))
+			}
+		})
+		$html.append($supportHtml);
+	};
+
+	$('.dateWrap').append($html);
 };	
 
 $(function() {
