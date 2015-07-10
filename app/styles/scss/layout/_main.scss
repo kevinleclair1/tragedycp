@@ -1,14 +1,18 @@
+$derp:#9D5256 ;
+
 header {
 
   height:100vh;
   width:100vw;
   
-  background:rgba(255,255,255, 0.5);
+  background:rgba($derp, 0.45);
   background-image:url('../media/albumart.svg');
   background-repeat:no-repeat;
   background-position:center;
-  background-size:100vh;
+  background-size:70%;
 }
+
+
 
 section {
   background: $mainBack;
